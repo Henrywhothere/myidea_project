@@ -1,0 +1,96 @@
+ chương trình xếp lịch làm việc cho người dùng
+
+# hiện ra gồm: t2 => sáng, trưa, tối
+
+# người dùng sẽ nhập vào
+
+# sau đó sẽ hiện ra lịch sinh hoạt toàn bộ tuần
+
+
+lichx = {'sangthu2': ' ', 'truathu2': ' ', 'toithu22': ' ',
+         'sangthu3': ' ', 'truathu3': ' ', 'toithu33': ' ',
+         'sangthu4': ' ', 'truathu4': ' ', 'toithu44': ' ',
+         'sangthu5': ' ', 'truathu5': ' ', 'toithu55': ' ',
+         'sangthu6': ' ', 'truathu6': ' ', 'toithu66': ' ',
+         'sangthu7': ' ', 'truathu7': ' ', 'toithu77': ' ',
+         'sangthuCN': ' ', 'truathuCN': ' ', 'toithuCNN': ' ',}
+        
+
+
+
+def printlich(lich):
+    print('------' + '|' + '---thứ 2-----' + '|' + '----thứ 3-----' + '|' + '-----thứ 4----' + '|' + '-----thứ 5----' + '|' + '-----thứ 6----' + '|' + '-----thứ 7----' + '|' + 'chủ nhật')
+    print('-sáng-' + '|' + lich['sangthu2'] + '|' + lich['sangthu3'] + '|' + lich['sangthu4'] + '|' + lich['sangthu5'] + '|' + lich['sangthu6'] + '|' + lich['sangthu7'] + '|' + lich['sangthuCN'])
+    print('---------------------------------------------------------------------------------------------------------')
+    print('-trưa-' + '|' + lich['truathu2'] + '|' + lich['truathu3'] + '|' + lich['truathu4'] + '|' + lich['truathu5'] + '|' + lich['truathu6'] + '|' + lich['truathu7'] + '|' + lich['truathuCN'])
+    print('---------------------------------------------------------------------------------------------------------')
+    print('-tối--' + '|' + lich['toithu22'] + '|' + lich['toithu33'] + '|' + lich['toithu44'] + '|' + lich['toithu55'] + '|' + lich['toithu66'] + '|' + lich['toithu77'] + '|' + lich['toithuCNN'])
+
+
+
+
+
+print('Xin mời nhập lịch làm việc của bạn: ')
+
+
+for day in range(1):
+    for thu2 in range(1):   
+        sang2 = input('sáng thứ 2: ')
+        lichx['sangthu2'] = sang2
+        trua2 = input('trưa thứ 2: ')
+        lichx['truathu2'] = trua2
+        toi2 = input('tối thứ 2: ')
+        lichx['toithu22'] = toi2
+
+    for thu3 in range(1):
+        sang3 = input('sáng thứ 3: ')
+        lichx['sangthu3'] = sang3
+        trua3 = input('trưa thứ 3: ')
+        lichx['truathu3'] = trua3
+        toi3 = input('tối thứ 3: ')
+        lichx['toithu33'] = toi3
+
+    
+    for thu4 in range(1):
+        sang4 = input('sáng thứ 4: ')
+        lichx['sangthu4'] = sang4
+        trua4 = input('trưa thứ 4: ')
+        lichx['truathu4'] = trua4
+        toi4 = input('tối thứ 4: ')
+        lichx['toithu44'] = toi4
+
+    for thu5 in range(1):
+        sang5 = input('sáng thứ 5: ')
+        lichx['sangthu5'] = sang5
+        trua5 = input('trưa thứ 5: ')
+        lichx['truathu5'] = trua5
+        toi5 = input('tối thứ 5: ')
+        lichx['toithu55'] = toi5
+
+    for thu6 in range(1):
+        sang6 = input('sáng thứ 6: ')
+        lichx['sangthu6'] = sang6
+        trua6 = input('trưa thứ 6: ')
+        lichx['truathu6'] = trua3
+        toi6 = input('tối thứ 6: ')
+        lichx['toithu66'] = toi6
+
+    for thu7 in range(1):
+        sang7 = input('sáng thứ 7: ')
+        lichx['sangthu7'] = sang7
+        trua7 = input('trưa thứ 7: ')
+        lichx['truathu7'] = trua7
+        toi7 = input('tối thứ 7: ')
+        lichx['toithu77'] = toi7
+
+    for CN in range(1):
+        sangCN = input('sáng thứ CN: ')
+        lichx['sangthuCN'] = sangCN
+        truaCN = input('trưa thứ CN: ')
+        lichx['truathuCN'] = truaCN
+        toiCN = input('tối thứ CN: ')
+        lichx['toithuCNN'] = toiCN
+
+    
+
+    printlich(lichx)5
