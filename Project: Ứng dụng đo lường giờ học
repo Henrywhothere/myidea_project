@@ -1,0 +1,63 @@
+#ứng dụng theo dõi lịch trình học
+#tên, môn học, thời gian học, tổng giờ học, sổ ghi lịch trình
+
+
+import time
+    
+    
+
+def luuketqua(user, subject, day, hours, minutes, tonggio):
+    with open('renPYTHON1.txt', 'a+') as filein:
+        filein.write("\r{} - {} - {}:{} => total hours: {}s".format(user, subject, day, hours, minutes, tonggio)) 
+        filein.close()
+    print('Kết quả đã được lưu vào mục renPYTHON1.txt')
+    
+
+
+
+def xemlaiketqua(nutbam):
+    if nutbam == 'Yes' or nutbam== 'yes':
+        with open('renPYTHON1.txt', 'r') as fileout:
+            print(fileout.read())
+
+
+
+
+tonggio = 0
+user = input('Your name (ten khong dau): ')
+subject = input('What do you want to learn today: ')
+day = input('day/month/year:') 
+hours = int(input('How many hours you want to study: '))
+minutes = int(input('How many minutes you want to study: '))
+
+print('\n')
+print('Are you ready?')
+notice = input("please type 'Yes' to start: ")
+
+    
+if notice.title() == 'Yes':
+    tonggio = hours*3600 + minutes*60
+    print('The clock is counting down... Finish your job right now!')
+    print('\n')
+    time.sleep(tonggio)
+    print("Time out!")
+    print("Congrations! You've done your mission excellently")
+    print('\n')
+    print('Do you want to save this result?')
+    saveresult = input(" 'Yes' or 'No': ")
+    if saveresult.title() == 'Yes':
+        luuketqua(user, subject, day, hours, minutes, tonggio)
+    elif saveresult.title() == 'No':
+        print('ok. Try harder next time!')
+
+
+
+
+print('\n')
+print('See what you saved right here!')
+opensaveresult = input("type 'Yes' to review: ").title()
+
+if opensaveresult == 'Yes':
+    xemlaiketqua(opensaveresult)
+else:
+    print('Have a good day!')
