@@ -1,0 +1,47 @@
+taikhoan = input('type your user name: ')
+matkhau = input('type your passowrd: ')
+
+
+
+def taotaikhoan(taikhoan, matkhau):
+    danhsachtk = {}
+    while taikhoan and matkhau not in danhsachtk:
+        print('\nVui lòng đăng ký tài khoản!')
+        taikhoan = input('nhập tên người dùng mới: ')
+        matkhau = input('nhập mật khẩu (nhập tối đa 6 chữ số): ')
+        if taikhoan.isalnum() and matkhau.isdigit():
+            danhsachtk.update({taikhoan: matkhau})
+            print('tạo tài khoản thành công')
+            break
+        else:
+            print('lưu tài khoản thất bại!')
+            print('\nTạo lại tài khoản...')
+            
+
+
+    print('tài khoản đã được tạo!')
+    return danhsachtk 
+        
+
+
+#dang nhap
+def dangnhap(taikhoan, matkhau):
+    danhsachtk = {'luanthuan':'220402'}
+    
+    ds_taikhoan = danhsachtk.keys()
+    ds_matkhau = danhsachtk.values()
+
+    if taikhoan in ds_taikhoan:
+        if matkhau in ds_matkhau:
+            print('Đăng nhập thành công!')
+    else:
+        taotaikhoan(taikhoan,matkhau)
+
+    
+
+
+def luutaikhoan(danhsachtk):
+    pass
+    
+
+dangnhap(taikhoan, matkhau)
