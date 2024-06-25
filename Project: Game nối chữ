@@ -1,0 +1,25 @@
+lst = []
+
+
+user1 = input('player1: ')
+while user1 != " ":
+    lst.append(user1)
+    print(user1[-1])
+    user2 = input('player2: ')
+    if user2 not in lst:
+        lst.append(user2)
+        print(user2[-1])
+    elif user2 in lst:
+        print('Player2 LOSE!')
+        break
+    user1 = input('player1: ')
+    if user1 in lst:
+        print('Player1 LOSE!')
+        break
+    if user1 not in lst:
+        continue
+    
+
+    
+        
+print('End game!')
