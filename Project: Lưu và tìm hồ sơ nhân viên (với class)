@@ -1,0 +1,135 @@
+#project sử dụng class: lưu hồ sơ và tìm hồ sơ nhân viên 
+
+
+class humansystem:
+    def __init__(self, name, phonenumber, email, depart, address):
+        self.name = name
+        self.phonenumber = phonenumber
+        self.email = email
+        self.depart = depart
+        self.address = address
+    
+
+
+
+    def savevaoluutru(self):
+        with open('renPYTHON1.txt', 'a', encoding = 'utf-8') as filein:
+            filein.write("\n")
+            filein.write("\rHọ và tên: {}".format(self.name))
+            filein.write("\rSố điện thoại: {}".format(self.phonenumber))
+            filein.write("\rEmail: {}".format(self.email))
+            filein.write("\rVai trò: {}".format(self.depart))
+            filein.close()
+        print('Saved')
+
+
+    
+        
+    def docdulieuluutru(self):
+        with open('renPYTHON1.txt', 'r', encoding = 'utf-8') as fileout:
+            pritn(fileout.read())
+    
+        
+
+
+
+class phongketoan(humansystem):
+    def printinfor(self):
+        print('Phòng kế toán')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email) 
+        
+
+
+class phongmarketing(humansystem):
+    def printinfor(self):
+        print('Phòng marketing')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email)
+        
+
+class phongnghiencuuvaphattrien(humansystem):
+    def printinfor(self):
+        print('Phòng nghiên cứu và phát triển')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email)
+        
+
+class phongnhansu(humansystem):
+    def printinfor(self):
+        print('Phòng nhân sự')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email)
+
+
+class phongchienluoc(humansystem):
+    def printinfor(self):
+        print('Phòng chiến lược')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email)
+
+
+class doingoai(humansystem):
+    def printinfor(self):
+        print('Phòng đối ngoại')
+        print(self.name)
+        print(self.phonenumber)
+        print(self.email)
+
+
+
+
+
+
+
+
+
+
+
+
+print("Nếu bạn là nhân viên mới chưa được lưu hồ sơ vui lòng nhập 'newbie' để lưu hồ sơ")
+
+user = input('Mời nhập: ')
+hoso = None
+
+
+
+    
+if user == 'newbie':
+    name = input('Nhập họ và tên: ')
+    phonenumber = input('Nhập số điện thoại: ')
+    email = input('Nhập email: ')
+    depart = input('Nhập vai trò: ')
+    address = input('Nhập địa chỉ: ')
+
+    hoso = humansystem(name, phonenumber, email, depart, address)
+    hoso.savevaoluutru()
+
+    
+    print('\n')
+    print('Mọi người giờ đây có thể xem thông tin về bạn để liên lạc!')
+    print('Thông tin của bạn bên dưới: ')
+    print('\n')
+    if depart.title == 'Kế Toán':
+        hoso = phongketoan(name, phonenumber, email, depart, address)
+        hoso.printinfor()
+    elif depart.title == 'Marketing':
+        hoso = phongmarketing(name, phonenumber, email, depart, address)
+        hoso.printinfor()
+    elif depart.title() == 'Nghiên Cứu Và Phát Triển':
+        hoso = phongnghiencuuvaphattrien(name, phonenumber, email, depart, address)
+        hoso.printinfor()
+    elif depart.title() == 'Nhân Sự':
+        hoso = phongnhansu(name, phonenumber, email, depart, address)
+        hoso.printinfor()
+    elif depart.title() == 'Chiến Lược':
+        hoso = phongchienluoc(name, phonenumber, email, depart, address)
+        hoso.printinfor()
+    elif depart.title() == 'Đối Ngoại':
+        hoso = phongdoingoai(name, phonenumber, email, depart, address)
+        hoso.printinfor()
