@@ -1,0 +1,171 @@
+import time
+
+
+class nhanvattrochoi:
+    def __init__(self, gioitinh, thanhinh, toc, khuonmat, trangphuc, he):
+        self.gioitinh = gioitinh
+        self.thanhinh = thanhinh
+        self.toc = toc
+        self.khuonmat = khuonmat
+        self.trangphuc = trangphuc
+        self.he = he
+
+    def taohinhnhanvat(self):
+        print("Nhân vật đang được tạo .....")
+        time.sleep(15)
+        print("Tạo nhân vật thành công!")
+        print("\n")
+        print("Nhân vật của bạn: ")
+        print("Giới tính nhân vật: " + self.gioitinh)
+        print("Thân hình nhân vật loại " + self.thanhinh)
+        print("Tóc nhân vật loại " + self.toc)
+        print("Khuôn mặt nhân vật loại " + self.khuonmat)
+        print("Trang phục nhân vật loại " + self.trangphuc)
+        print("Nhân vật thuộc hệ: " + self.he)
+        print('\n')
+
+
+class nhanvathekim(nhanvattrochoi):     
+    def hanhdong(self):
+        def kynang(n):
+            if n == 'kynang1':
+                print('Nhân vật sử dụng: Thân thể bọc kim')
+            elif n == 'kynang2':
+                print('Nhân vật sử dụng chiêu: Lưỡi thương kim cương')
+            elif n == 'kynang3':
+                print('Nhân vật sử dụng chiêu: Thảm kim cương')
+            elif n == 'chieucuoi':
+                print('Nhân vật sử dụng chiêu cuối: Cơn mưa vàng')
+            else:
+                print('...')
+        
+        hanhdong = input("Chọn hành động cho nhân vật (chạy/lướt/nhảy/lộn/bay/kynang1/kynang2/kynang3/chieucuoi): ")
+        if hanhdong == 'kynang1' or hanhdong == 'kynang2' or hanhdong == 'kynang3' or hanhdong == 'chieucuoi':
+            kynang(hanhdong)
+        else: 
+            print("Nhân vật " + hanhdong)
+
+    
+
+    
+class nhanvathemoc(nhanvattrochoi):
+    def hanhdong(self):
+        def kynang(n):
+            if n == 'kynang1':
+                print('Nhân vật sử dụng: Thần dược ')
+            elif n == 'kynang2':
+                print('Nhân vật sử dụng chiêu: Dây gai')
+            elif n == 'kynang3':
+                print('Nhân vật sử dụng chiêu: Hoa của quỷ')
+            elif n == 'chieucuoi':
+                print('Nhân vật sử dụng chiêu cuối: Cây thần Atru')
+            else:
+                print('...')
+        
+        hanhdong = input("Chọn hành động cho nhân vật (chạy/lướt/nhảy/lộn/bay/kynang1/kynang2/kynang3/chieucuoi): ")
+        if hanhdong == 'kynang1' or hanhdong == 'kynang2' or hanhdong == 'kynang3' or hanhdong == 'chieucuoi':
+            kynang(hanhdong)
+        else: 
+            print("Nhân vật " + hanhdong)
+
+
+
+class nhanvathethuy(nhanvattrochoi):
+    def hanhdong(self):
+        def kynang(n):
+            if n == 'kynang1':
+                print('Nhân vật sử dụng: Bong bóng nước')
+            elif n == 'kynang2':
+                print('Nhân vật sử dụng chiêu: Thủy điện')
+            elif n == 'kynang3':
+                print('Nhân vật sử dụng chiêu: Đại bác nước')
+            elif n == 'chieucuoi':
+                print('Nhân vật sử dụng chiêu cuối: Đại hồng thủy máu')
+            else:
+                print('...')
+        
+        hanhdong = input("Chọn hành động cho nhân vật (chạy/lướt/nhảy/lộn/bay/kynang1/kynang2/kynang3/chieucuoi): ")
+        if hanhdong == 'kynang1' or hanhdong == 'kynang2' or hanhdong == 'kynang3' or hanhdong == 'chieucuoi':
+            kynang(hanhdong)
+        else: 
+            print("Nhân vật " + hanhdong)
+
+
+class nhanvathehoa(nhanvattrochoi):
+    def hanhdong(self):
+        def kynang(n):
+            if n == 'kynang1':
+                print('Nhân vật sử dụng: Sinh nhiệt')
+            elif n == 'kynang2':
+                print('Nhân vật sử dụng chiêu: Hỏa thiêu')
+            elif n == 'kynang3':
+                print('Nhân vật sử dụng chiêu: Ngọn lửa diệt vong')
+            elif n == 'chieucuoi':
+                print('Nhân vật sử dụng chiêu cuối: Sao hỏa hạ giới')
+            else:
+                print('...')
+        
+        hanhdong = input("Chọn hành động cho nhân vật (chạy/lướt/nhảy/lộn/bay/kynang1/kynang2/kynang3/chieucuoi): ")
+        if hanhdong == 'kynang1' or hanhdong == 'kynang2' or hanhdong == 'kynang3' or hanhdong == 'chieucuoi':
+            kynang(hanhdong)
+        else: 
+            print("Nhân vật " + hanhdong)
+
+
+class nhanvathetho(nhanvattrochoi):
+    def hanhdong(self):
+        def kynang(n):
+            if n == 'kynang1':
+                print('Nhân vật sử dụng: Giáp thổ')
+            elif n == 'kynang2':
+                print('Nhân vật sử dụng chiêu: Khổng lồ đá')
+            elif n == 'kynang3':
+                print('Nhân vật sử dụng chiêu: Phân chia lãnh thổ')
+            elif n == 'chieucuoi':
+                print('Nhân vật sử dụng chiêu cuối: Ma trận thổ hệ')
+            else:
+                print('...')
+        
+        hanhdong = input("Chọn hành động cho nhân vật (chạy/lướt/nhảy/lộn/bay/kynang1/kynang2/kynang3/chieucuoi): ")
+        if hanhdong == 'kynang1' or hanhdong == 'kynang2' or hanhdong == 'kynang3' or hanhdong == 'chieucuoi':
+            kynang(hanhdong)
+        else: 
+            print("Nhân vật " + hanhdong)
+
+
+
+
+
+print("VUI LÒNG XÂY DỰNG NHÂN VẬT CỦA BẠN!")
+gioitinh = input("Giới tính bạn chọn (nam/nữ): ")
+thanhinh = input("Thân hình bạn muốn chọn (1,2,3,4): ")
+toc = input("Tóc bạn muốn chọn (1,2,3,4): ")
+khuonmat = input("Khuôn mặt bạn muốn chọn (1,2,3,4): ")
+trangphuc = input("Trang phục bạn muốn chọn (1,2,3,4): ")
+he = input("Nhân vật của bạn thuộc hệ (kim, mộc, thủy, hỏa, thổ): ")
+print("\n")
+
+
+if he.title() == 'Kim':
+    nhanvat1 = nhanvathekim(gioitinh, thanhinh, toc, khuonmat, trangphuc, he)
+    nhanvat1.taohinhnhanvat()
+    nhanvat1.hanhdong()
+elif he.title() == 'Mộc':
+    nhanvat1 = nhanvathemoc(gioitinh, thanhinh, toc, khuonmat, trangphuc, he)
+    nhanvat1.taohinhnhanvat()
+    nhanvat1.hanhdong()
+elif he.title() == 'Thủy':
+    nhanvat1 = nhanvathethuy(gioitinh, thanhinh, toc, khuonmat, trangphuc, he)
+    nhanvat1.taohinhnhanvat()
+    nhanvat1.hanhdong()
+elif he.title() == 'Hỏa':
+    nhanvat1 = nhanvathehoa(gioitinh, thanhinh, toc, khuonmat, trangphuc, he)
+    nhanvat1.taohinhnhanvat()
+    nhanvat1.hanhdong()
+elif he.title() == 'Thổ':
+    nhanvat1 = nhanvathetho(gioitinh, thanhinh, toc, khuonmat, trangphuc, he)
+    nhanvat1.taohinhnhanvat()
+    nhanvat1.hanhdong()
+else:
+    print("Tạo nhân vật không thành công!")
+    print("Vui lòng thử lại sau...")
