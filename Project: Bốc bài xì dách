@@ -1,0 +1,142 @@
+#project: bốc bài cho người chơi và host
+#ý tưởng: sử dụng random
+#tạo lá bài, bốc bài cho người chơi, bốc bài cho host
+
+import random
+import chucnangxidach as xd
+
+
+solabai = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K', 'A']
+tenlabai = ['Cơ', 'Rô', 'Chuồng', 'Bích']
+
+
+solabainguoichoi = []
+
+
+
+laso1 = xd.laso1(solabai, tenlabai, solabainguoichoi)
+laso2 = xd.laso2(solabai, tenlabai, solabainguoichoi)
+
+for in2la in solabainguoichoi:
+    print(in2la)
+
+    
+#LƯỢT BỐC CỦA NGƯỜI CHƠI
+#lượt bốc đầu tiên
+print("***nếu bạn được xì dách vui lòng nhập: xidach")
+luotboc1 = input("Bạn có muốn bốc không? (yes/no): ")
+if luotboc1 == "xidach":
+    print("NGƯỜI CHƠI THẮNG CUỘC HOST KHÔNG CẦN MỞ BÀI NỮA")
+elif luotboc1.title() == 'Yes':
+    laso3 = xd.laso3(solabai, tenlabai, solabainguoichoi)
+    xd.inbai(solabainguoichoi)
+    #lượt bốc lần hai
+    luotboc2 = input("Bạn có muốn bốc không? (yes/no): ")
+    if luotboc2.title() == 'Yes':
+        laso4 = xd.laso4(solabai, tenlabai, solabainguoichoi)
+        xd.inbai(solabainguoichoi)
+        #lượt bốc cuối cùng
+        luotboc3 = input("Bạn có muốn bốc không? (yes/no): ")
+        if luotboc3.title() == 'Yes':
+            laso5 = xd.laso5(solabai, tenlabai, solabainguoichoi)
+            xd.inbai(solabainguoichoi)
+            print('Bạn đã đủ bài!')
+        else:
+            print('Người chơi dừng bốc bài')      
+    else:
+        print('Người chơi dừng bốc bài')
+else:
+    print('Người chơi dừng bốc bài') 
+
+
+
+print("\n")
+#BÀI CỦA HOST
+print('Tới lượt xem bài của host')
+solabaihost = []
+
+laso1_h = xd.laso1(solabai, tenlabai, solabaihost)
+laso2_h = xd.laso2(solabai, tenlabai, solabaihost)
+
+#HOST MỞ BÀI
+print("***nếu người chơi được xì dách, bạn vui lòng nhập: thua")
+xembai_h = input("Host nhập 'open' để xem bài: ")
+
+if xembai_h.title() == "Open":
+    xd.inbai(solabaihost)
+    # lượt bốc đầu tiên của host
+    luotboc1_h = input("host có muốn bốc bài hay không? (yes/no): ")
+    if luotboc1_h.title() == "Yes":
+        laso3_h = xd.laso3(solabai, tenlabai, solabaihost)
+        xd.inbai(solabaihost)
+        #lượt bốc thứ hai của host
+        luotboc2_h = input("host có muốn bốc tiếp hay không? (yes/no): ")
+        if luotboc2_h.title() == "Yes":
+            laso4_h = xd.laso4(solabai, tenlabai, solabaihost)
+            xd.inbai(solabaihost)
+            #lượt bốc cuối cùng của host
+            luotboc3_h = input("host có muốn bốc tiếp hay không? (yes/no): ")
+            if luotboc3_h.title() == "Yes":
+                laso5_h = xd.laso5(solabai, tenlabai, solabaihost)
+                xd.inbai(solabaihost)
+                print("Host đã hết lượt bốc")
+            else:
+                print("Host dừng bốc bài")
+        else:
+            print("Host dừng bốc bài") 
+    else:
+        print("Host dừng bốc bài")
+
+elif xembai_h.title() == "Thua":
+    print("HOST ĐÃ THUA!")  
+
+
+
+
+
+
+#Phần module chức năng riêng: 
+import random
+
+
+def laso1(solabai, tenlabai, dsbai):
+    solaso1 = random.choice(solabai)
+    tenlaso1 = random.choice(tenlabai)
+    laso1 = "{} {}".format(solaso1,tenlaso1)
+    dsbai.append(laso1)
+            
+
+
+def laso2(solabai, tenlabai, dsbai):
+    solaso2 = random.choice(solabai)
+    tenlaso2 = random.choice(tenlabai)
+    laso2 = "{} {}".format(solaso2,tenlaso2)
+    dsbai.append(laso2)
+
+
+def laso3(solabai, tenlabai, dsbai):
+    solaso3 = random.choice(solabai)
+    tenlaso3 = random.choice(tenlabai)
+    laso3 = "{} {}".format(solaso3,tenlaso3)
+    dsbai.append(laso3)
+
+
+def laso4(solabai, tenlabai, dsbai):
+    solaso4 = random.choice(solabai)
+    tenlaso4 = random.choice(tenlabai)
+    laso4 = "{} {}".format(solaso4,tenlaso4)
+    dsbai.append(laso4)
+
+
+def laso5(solabai, tenlabai, dsbai):
+    solaso5 = random.choice(solabai)
+    tenlaso5 = random.choice(tenlabai)
+    laso5 = "{} {}".format(solaso5,tenlaso5)
+    dsbai.append(laso5)
+
+
+
+#Chức năng in ra các lá bài có trong tay:
+def inbai(nla):
+    for i in nla:
+        print(i)
