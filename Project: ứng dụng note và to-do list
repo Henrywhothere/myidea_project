@@ -1,0 +1,47 @@
+#ứng dụng để note (to-do list):
+# note: ghi note
+# todolist: tạo mẫu sằn và cho người dùng nhập todolist
+
+
+import datetime
+
+
+
+def note():
+    print('\n')
+    print('Mời bạn ghi: ')
+    note = input()
+    with open('renPYTHON1.txt', 'w+', encoding='utf-8') as f:
+        f.write(note)
+        f.close()
+    
+     
+
+def todolist():
+    ngaythang = datetime.datetime.now()
+    f = open('renPYTHON1.txt', 'w+', encoding='utf-8')
+    soviec = int(input("hôm nay bạn có bao nhiêu việc: "))
+    f.write('\r')
+    f.write("date: " + ngaythang.strftime("%x"))
+    f.write("\r")
+    for i in range(1, soviec+1):
+        viec = input("{}. ".format(i))
+        f.write("{}. ".format(i) + viec)
+        f.write('\r')
+        
+        
+
+
+    
+
+print("Nếu note xin vui lòng nhập số 1 ")
+print("Nếu to-do list vui lòng nhập số 2")
+chonso = int(input("Mời bạn nhập số: "))
+
+
+if chonso == 1:
+    note()
+elif chonso == 2:
+    todolist()
+elif chonso != 1 or chonso != 2:
+    print('Chương trình kết thúc!')
