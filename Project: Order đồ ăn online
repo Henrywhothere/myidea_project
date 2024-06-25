@@ -1,0 +1,143 @@
+#project: order đồ ăn online 
+
+
+
+import datetime
+
+
+menudoan = ''' Menu đồ ăn
+1. Cơm chiên đại dương
+2. Cơm chiên dương châu
+3. Cơm gà sốt tỏi
+4. Cơm chiên bắc đẩu
+5. Mì xào sườn cay
+6. Mì đảo chảo
+7. Mì xào đại dương
+8. Gà sốt thái
+9. Sườn bắc kinh
+10. Rau củ lộn xộn'''
+
+
+menudouong = ''' Menu đồ uống
+11. Pepsi
+12. Coca cola
+13. Sting
+14. 7up
+15. Nước sâm
+16. Nước suối '''
+
+
+
+foodprice = {"1":40, "2":38, "3":45, "4":43,"5":40, "6":43, "7":40, "8":35, "9":35, "10":30,"11":10, "12":10, "13":10, "14":10, "15":8, "16":8}
+
+
+
+
+
+foodname = {"1":"Cơm chiên đại dương", "2":"Cơm chiên dương châu", "3":"Cơm gà sốt tỏi",
+              "4":"Cơm chiên bắc đẩu", "5":"Mì xào sườn cay", "6":"Mì đảo chảo", "7":"Mì xào đại dương",
+              "8":"Gà sốt thái", "9":"Sườn bắc kinh", "10":"Rau củ lộn xộn","11":"Pepsi", "12":"Coca cola", "13":"Sting", "14":"7up", "15":"Nước sâm", "16":"Nước suối"}
+
+
+
+
+
+
+
+
+print(menudoan)
+print(menudouong)
+print("\n")
+
+somon = int(input('Bạn muốn order bao nhiêu món: '))
+print('Vui lòng nhập số thứ tự thay cho tên món ăn bạn muốn chọn!')
+
+solan = 0
+tongtenmon = []
+tonggiamon = []
+ngaythang = datetime.datetime.now()
+
+
+while solan < somon:
+    solan += 1
+    user = str(input('Bạn muốn order món số mấy: '))
+    soluong = int(input('Số lượng: '))
+    tenmon = foodname.get(user)
+    giatien = foodprice.get(user)
+    tongtienmon = giatien*soluong*1000
+    ghihoadon = "{} x{} : {}".format(tenmon, soluong, tongtienmon)
+    tonggiamon.append(tongtienmon)
+    tongtenmon.append(ghihoadon)
+
+
+tongbill = sum(tonggiamon)
+print("\n")
+print("Các món bạn đã đặt: ")
+for mon in tongtenmon:
+    print(mon)
+
+print("Tổng: ",tongbill)
+print("\n")
+print("\n")
+tieptuc = input("Vui lòng nhập 'tiếp tục' để hoàn tất đơn hàng: ")
+print("\n")
+
+
+
+if tieptuc == 'tiếp tục':
+    ten = input('Tên người nhận: ')
+    sdt = input('Số điện thoại: ')
+    diachi = input('Địa chỉ giao hàng: ')
+    print('\n')
+    thanhtoan = input("Vui lòng nhập 'xác nhận' để thanh toán: ")
+    if thanhtoan == 'xác nhận':
+        print('Chọn phương thức thanh toán: ')
+        print('1. Thanh toán tiền mặt')
+        print('2. Thanh toán online')
+        pttt = input('nhập phương thức thanh toán (bằng số): ')
+        if pttt == '1':
+            print('\n')
+            print('Đơn hàng của bạn: ', ngaythang.strftime("%x"))
+            print('Tên người nhận: ',ten)
+            print('Số điện thoại: ',sdt)
+            print('Địa chỉ nhận hàng: ',diachi)
+            print('Phương thức thanh toán: thanh toán tiền mặt')
+            print('--------------------')
+            for mon in tongtenmon:
+                print(mon)
+            print("Tổng: ",tongbill)
+            print("\n")
+            xacnhan = input("Vui lòng nhập 'xác nhận' để đặt hàng: ")
+            if xacnhan == 'xác nhận':
+                print('\n')
+                print('Đơn hàng đặt thành công!')
+                print('Hãy cho chúng tôi ít thời gian')
+                print('Chúng tôi sẽ trả lại bạn những món ngon ăn nhất')
+            else:
+                print('Đơn hàng không được xác nhận!')
+        elif pttt == '2':
+            print('\n')
+            print('Đơn hàng của bạn: ', ngaythang.strftime("%x"))
+            print('Tên người nhận: ',ten)
+            print('Số điện thoại: ',sdt)
+            print('Địa chỉ nhận hàng: ',diachi)
+            print('Phương thức thanh toán: thanh toán online')
+            print('--------------------')
+            for mon in tongtenmon:
+                print(mon)
+            print("Tổng: ",tongbill)
+            print("\n")
+            xacnhan = input("Vui lòng nhập 'xác nhận' để đặt hàng: ")
+            if xacnhan == 'xác nhận':
+                print('\n')
+                print('Đơn hàng đặt thành công!')
+                print('Hãy cho chúng tôi ít thời gian')
+                print('Chúng tôi sẽ trả lại bạn những món ăn ngon nhất')
+            else:
+                print('Đơn hàng không được xác nhận!')
+        else:
+            print('Đơn hàng không được xác nhận!')
+    else:
+        print('Đơn hàng không được xác nhận!')
+else:
+    print('Đơn hàng không được xác nhận!')
